@@ -24,7 +24,7 @@ Icon.loadFont();
 export default () => {
   const [loading, setLoading] = useState(false);
   const [showResult, setShowResult] = useState(false);
-  const [city, setCity] = useState();
+  const [findCity, setFindCity] = useState();
   const [bkpCity, setBkpCity] = useState();
   const [icon, setIcon] = useState();
   const [description, setDescription] = useState();
@@ -39,12 +39,13 @@ export default () => {
       setLoading(true);
 
       const response = await api.get(
-        `?q=${city}&appid=${APPID}&units=${UNIT}&lang=${LANGUAGE}`
+        `?q=${findCity}&appid=${APPID}&units=${UNIT}&lang=${LANGUAGE}`
       );
 
-      const { list } = response.data;
+      const { list, city } = response.data;
 
       setLoading(false);
+      setBkpCity(city.name);
       setIcon(list[0].weather[0].icon);
       setDescription(list[0].weather[0].description);
       setTemperature(list[0].main.temp);
@@ -57,27 +58,27 @@ export default () => {
 
   const handleClick = () => {
     setShowResult(false);
-    setBkpCity(city);
     weatherByCity();
     Keyboard.dismiss();
-    setCity('');
+    setFindCity('');
   };
 
   return (
-    <Linear colors={['#052a4e', '#9ecefd']}>
-      <StatusBar backgroundColor="#00519d" barStyle="light-content" />
+    <Linear colors={['#052a4e', '#325d87']}>
+      <StatusBar backgroundColor="#041a2f" barStyle="light-content" />
       <Page>
         <Form>
           <Input
             placeholder="Cidade"
-            value={city}
-            onChangeText={c => setCity(c.replace(/\d/g, ''))}
+            placeholderTextColor="#052a4e"
+            value={findCity}
+            onChangeText={c => setFindCity(c.replace(/\d/g, ''))}
           />
-          <Button loading={loading} onPress={handleClick}>
+          <Button loading={loading} onPress={handleClick} activeOpacity={1}>
             {loading ? (
-              <ActivityIndicator color="#fff" />
+              <ActivityIndicator color="#052a4e" />
             ) : (
-              <Icon name="search" size={30} color="#fff" />
+              <Icon name="search" size={30} color="#052a4e" />
             )}
           </Button>
         </Form>

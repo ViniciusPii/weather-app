@@ -23,10 +23,11 @@ export const Form = styled.View`
 `;
 
 export const Input = styled.TextInput`
-  width: 75%;
+  width: 80%;
   background-color: #ffffff;
   height: 50px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   font-size: 18px;
   padding-left: 10px;
 `;
@@ -34,10 +35,11 @@ export const Input = styled.TextInput`
 export const Button = styled.TouchableOpacity`
   width: 20%;
   height: 50px;
-  background-color: #00366e;
-  border-radius: 5px;
+  background-color: #fff;
   justify-content: center;
   align-items: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 `;
 
 export const Result = styled.View`
