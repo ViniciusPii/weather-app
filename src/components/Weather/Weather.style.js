@@ -39,3 +39,23 @@ export const Button = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `;
+
+export const Result = styled.View`
+  width: 90%;
+  height: auto;
+  background-color: #ffffffe6;
+  margin-top: 50px;
+  border-radius: 5px;
+`;
+
+export const ResultTitle = styled.Text`
+  font-size: 25px;
+  text-align: center;
+  margin-top: 5px;
+`;
+
+export const Img = styled.Image`
+  width: 80px;
+  height: 50px;
+  margin-left: 10px;
+`;
