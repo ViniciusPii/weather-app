@@ -12,6 +12,7 @@ export const Page = styled.SafeAreaView`
 
 export const Text = styled.Text`
   font-size: 18px;
+  text-transform: capitalize;
 `;
 
 export const Form = styled.View`
@@ -23,10 +24,9 @@ export const Form = styled.View`
 
 export const Input = styled.TextInput`
   width: 75%;
-  background-color: #fff;
+  background-color: #ffffff;
   height: 50px;
   border-radius: 5px;
-  opacity: 0.85;
   font-size: 18px;
   padding-left: 10px;
 `;
@@ -41,21 +41,55 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const Result = styled.View`
-  width: 90%;
+  width: 85%;
   height: auto;
-  background-color: #ffffffe6;
   margin-top: 50px;
   border-radius: 5px;
+  padding: 20px 0;
+  align-items: center;
 `;
 
 export const ResultTitle = styled.Text`
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
-  margin-top: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: capitalize;
+`;
+
+export const Division = styled.Text`
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin: 20px 0 30px 0;
+`;
+
+export const ResultTemp = styled.View`
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Temp = styled.View`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Img = styled.Image`
   width: 80px;
   height: 50px;
-  margin-left: 10px;
+`;
+
+export const Description = styled.Text`
+  margin-top: 10px;
+  font-size: 20px;
+  color: #fff;
+  text-transform: capitalize;
+`;
+
+export const Temperature = styled.Text`
+  font-size: 50px;
+  color: #fff;
 `;
